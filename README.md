@@ -8,12 +8,14 @@ Here's how to use it.
 Attaching a file
 ----------------
 `py stegodon.py -a image file outfile`
+
 `image` is the image that you're going to attach the file to, `file` is the file you want to attach, and `outfile` is the name of the result image that contains the file. `outfile` should be a *.png or some other lossless format.
 You can also use `-ap` if you want to pad the rest of the file with junk data. This will increase the resulting file size but makes the steganography harder to visually detect in most cases.
 
 Scanning for a file
 -------------------
 `py stegodon.py -s image`
+
 `image` is the image you want to check. This will run a basic scan for valid files by checking the pixel data in the image. If something is found, it will output the name, file size, and "channel" that the file is stored on.
 
 Extracting a file
@@ -25,6 +27,7 @@ Extracting a file
 Create a diff
 -------------
 `py stegodon.py -d image1 image2 outfile`
+
 `image1` and `image2` are two images files of any type that you want to compare. `outfile` is an image that represents the differences in pixel data between the two compared images.
 `outfile` will have quite a bit of "snow" in it most of the time, and the color of the pixels represents which channels were altered. In the case of non-altered pixels the original pixel is placed in the proper position in the diff image.
 
